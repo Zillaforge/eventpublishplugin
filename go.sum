@@ -188,10 +188,10 @@ gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod h1:K4uyk7z7BCEPqu6E+C
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
 gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
 nullprogram.com/x/optparse v1.0.0/go.mod h1:KdyPE+Igbe0jQUrVfMqDMeJQIJZEuyV7pjYmp6pbG50=
-pegasus-cloud.com/aes/eventpublishpluginclient v0.2.2 h1:0v+rrPc7Ulj8DCQVJPdvWezK5B2JePyly9/84X9ikz4=
-pegasus-cloud.com/aes/eventpublishpluginclient v0.2.2/go.mod h1:dDGV2PRMOK/MOyKNngFye+I2TcjNxNYN2ZE632H2/PQ=
-pegasus-cloud.com/aes/pegasusmsgqueueclient v1.5.0 h1:iGh+G7nVh63+EZVAOyY5nDY0JFTH5Qgo4bkv5iuanD8=
+pegasus-cloud.com/aes/eventpublishpluginclient v0.2.3 h1:svSqQGB8m0gP3OSI/Pg0Cs66kmMTm6susOJusGLFBEw=
+pegasus-cloud.com/aes/eventpublishpluginclient v0.2.3/go.mod h1:GkGm7JZ9nsXZd7n+FfNhtGACzmQ5g7jOedLuvpGhtvc=
+pegasus-cloud.com/aes/pegasusmsgqueueclient v1.5.0 h1:+MHYWIxUnScZFiqyPdA6TMJbI7QeRNsU4hWOy9ZXpQ0=
 pegasus-cloud.com/aes/pegasusmsgqueueclient v1.5.0/go.mod h1:2gxybBCCnpZOjBBqntWFSlc8iwyDRAzTiljULfJc+oM=
-pegasus-cloud.com/aes/toolkits v0.4.3 h1:Srz4hUk7khDou2JlfdwiauRXFQE0B3vv0Ubf/cSVGAs=
-pegasus-cloud.com/aes/toolkits v0.4.3/go.mod h1:zYFHi1eU599GmpAJF9B5GzghesZslLtVMqxVtkJap1M=
+pegasus-cloud.com/aes/toolkits v0.4.5 h1:xjwsD42vh1RZFsu/ZXU52IDqA6bSStoUDK+h2XeiVq4=
+pegasus-cloud.com/aes/toolkits v0.4.5/go.mod h1:zYFHi1eU599GmpAJF9B5GzghesZslLtVMqxVtkJap1M=
 rsc.io/pdf v0.1.1/go.mod h1:n8OzWcQ6Sp37PL01nO98y4iUCRdTGarVfzxY20ICaU4=

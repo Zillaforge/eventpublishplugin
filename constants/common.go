@@ -9,7 +9,7 @@ const (
 	LowerAbbrName  = "eventpublishplugin"
 
 	Kind                 = PascalCaseName
-	Version              = "0.1.1"
+	Version              = "0.1.2"
 	GlobalConfigPath     = "etc/ASUS"
 	GlobalConfigFilename = LowerAbbrName + ".yaml"
 

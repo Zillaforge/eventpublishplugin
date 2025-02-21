@@ -9,9 +9,9 @@ require (
 	google.golang.org/grpc v1.69.2
 	google.golang.org/protobuf v1.36.2
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	pegasus-cloud.com/aes/eventpublishpluginclient v0.2.2
+	pegasus-cloud.com/aes/eventpublishpluginclient v0.2.3
 	pegasus-cloud.com/aes/pegasusmsgqueueclient v1.5.0
-	pegasus-cloud.com/aes/toolkits v0.4.3
+	pegasus-cloud.com/aes/toolkits v0.4.5
 )
 
 require (

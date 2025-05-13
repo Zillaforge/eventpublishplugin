@@ -1,0 +1,26 @@
+services:
+  pegasus-cloud-eventpublishplugin:
+    profiles:
+      - ${EEP_DISABLE:-}
+    image: ociscloud/golang:1.22.4-${PLATFORM:-ubuntu}-${ARCH:-amd64}
+    container_name: eep-server
+    networks:
+      pegasus-cloud-network:
+        ipv4_address: 172.40.100.0
+    working_dir: /home/${PLUGIN_FOLDER_NAME}
+    environment:
+      - GOPROXY=${GOPROXY}
+    volumes:
+      - ${PWD}/..:/home
+      - pegasus-cloud-eventpublishplugin:/run
+    entrypoint: ["tail", "-f", "/dev/null"]
+
+networks:
+  pegasus-cloud-network:
+    external: true
+    name: pegasus-cloud-network
+
+volumes:
+  pegasus-cloud-eventpublishplugin:
+    name: pegasus-cloud-eventpublishplugin
+    external: true

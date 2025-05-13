@@ -56,6 +56,14 @@
 		"GOSUMDB": "off"
 	},
 	"runArgs": [
-		"--network=proxy-network"
-	]
+		"--network=proxy-network",
+		// "--network=pegasus-cloud-network"
+	],
+	// "mounts": [
+	// 	{ 
+	// 		"source": "pegasus-cloud-eventpublishplugin", 
+	// 		"target": "/run", 
+	// 		"type": "volume" 
+	// 	}
+	// ]
 }

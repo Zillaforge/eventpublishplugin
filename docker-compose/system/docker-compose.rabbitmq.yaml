@@ -1,0 +1,27 @@
+services:
+  pegasus-cloud-rabbitmq:
+    profiles:
+      - ${RABBITMQ_DISABLE:-}
+    image: bitnami/rabbitmq:3.10.25
+    container_name: rabbitmq
+    networks:
+      pegasus-cloud-network:
+        ipv4_address: 172.40.201.0
+    volumes:
+      - pegasus-cloud-rabbitmq-data:/var/lib/rabbitmq
+    ports:
+      # - "5672:5672"
+      - "15672:15672"
+    environment:
+      - RABBITMQ_MANAGEMENT_ALLOW_WEB_ACCESS=true
+      - RABBITMQ_DEFAULT_USER=guest
+      - RABBITMQ_DEFAULT_PASS=guest
+
+networks:
+  pegasus-cloud-network:
+    external: true
+    name: pegasus-cloud-network
+
+volumes:
+  pegasus-cloud-rabbitmq-data:
+    name: pegasus-cloud-rabbitmq-data

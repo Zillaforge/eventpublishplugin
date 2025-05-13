@@ -1,6 +1,6 @@
 OWNER ?= ociscloud
 PROJECT ?= EventPublishPlugin
-ABBR ?= fs
+ABBR ?= eventpublishplugin
 IMAGE_NAME ?= event-publish-plugin
 GOVERSION ?= 1.22.4
 OS ?= ubuntu
@@ -95,15 +95,48 @@ push-image:
 start:
 	@go env -w GOPROXY=$(GO_PROXY)
 	@go env -w GOSUMDB="off"
-	@go run main.go serve -c etc/eventpublishplugin.yaml
+	@go run main.go serve -c etc/eventpublishplugin.yaml --redis-channel eventpublishplugin
+
+.PHONY: start-dev-env
+start-dev-env:
+	@make start-dev-persistent
+	@make start-dev-system
+	@make start-dev-service
+
+.PHONY: start-dev-service
+start-dev-service: docker-compose/service/docker-compose.*.yaml
+	@for f in $^; do COMPOSE_IGNORE_ORPHANS=True docker-compose -f $${f} -p "pegasus-service" up -d --no-recreate || true; done
+
+.PHONY: start-dev-system
+start-dev-system: docker-compose/system/docker-compose.*.yaml
+	@for f in $^; do COMPOSE_IGNORE_ORPHANS=True docker-compose -f $${f} -p "pegasus-system" up -d --no-recreate || true; done
+
 
 .PHONY: start-dev-persistent
 start-dev-persistent: docker-compose/persistent/docker-compose.*.yaml
-	@for f in $^; do COMPOSE_IGNORE_ORPHANS=True docker-compose -f $${f} -p "pegasus-system" up -d; done
+	@for f in $^; do COMPOSE_IGNORE_ORPHANS=True docker-compose -f $${f} -p "pegasus-system" up -d --no-start || true; done
+
+.PHONY: stop-dev-env # Stop and Remove current service only
+stop-dev-env:
+	COMPOSE_IGNORE_ORPHANS=True docker-compose -f docker-compose/service/docker-compose.${ABBR}.yaml -p "pegasus-service" down
+
+.PHONY: stop-dev-all # Stop and Remove all dependency
+stop-dev-all:
+	@make stop-dev-service
+	@make stop-dev-system
 
 .PHONY: purge-dev-all # Stop and Remove all dependency include persistent network and volume
 purge-dev-all:
+	@make stop-dev-all
 	@make clean-dev-persistent
+
+.PHONY: stop-dev-service
+stop-dev-service: docker-compose/service/docker-compose.*.yaml
+	@for f in $^; do COMPOSE_IGNORE_ORPHANS=True docker-compose -f $${f} -p "pegasus-service" down -v; done
+
+.PHONY: stop-dev-system
+stop-dev-system: docker-compose/system/docker-compose.*.yaml
+	@for f in $^; do COMPOSE_IGNORE_ORPHANS=True docker-compose -f $${f} -p "pegasus-system" down -v; done
 
 .PHONY: clean-dev-persistent
 clean-dev-persistent: docker-compose/persistent/docker-compose.*.yaml

@@ -1,0 +1,32 @@
+services:
+  pegasus-cloud-grpcui:
+    build:
+      dockerfile: Dockerfile.grpcui
+    container_name: grpcui
+    networks:
+      pegasus-cloud-network:
+        ipv4_address: 172.40.203.1
+    volumes:
+      - pegasus-cloud-eventpublishplugin:/run
+      - ${PWD}/..:/home
+    entrypoint:
+      - "grpcui"
+      - "-bind=0.0.0.0"
+      - "-port=8080"
+      - "-import-path=${IMPORT_PATH}"
+      - "-proto=${PROTO}"
+      - "-plaintext"
+      - "unix://${SOCK}"
+    ports:
+      - "8080:8080"
+    restart: always
+
+networks:
+  pegasus-cloud-network:
+    external: true
+    name: pegasus-cloud-network
+
+volumes:
+  pegasus-cloud-eventpublishplugin:
+    name: pegasus-cloud-eventpublishplugin
+    external: true

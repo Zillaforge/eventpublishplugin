@@ -1,0 +1,38 @@
+services:
+  pegasus-cloud-redis:
+    image: docker.io/bitnami/redis:6.2.7
+    container_name: redis
+    environment:
+      - REDIS_PASSWORD=password
+    # ports:
+      # - "6379:6379"
+    networks:
+      pegasus-cloud-network:
+        ipv4_address: 172.40.202.0
+
+  pegasus-cloud-redis-sentinel:
+    image: docker.io/bitnami/redis-sentinel:6.2.7
+    container_name: redis-sentinel
+    environment:
+      - REDIS_SENTINEL_PASSWORD=password
+      - REDIS_MASTER_HOST=pegasus-cloud-redis
+      - REDIS_MASTER_PASSWORD=password
+    # ports:
+      # - "26379:26379"
+    networks:
+      pegasus-cloud-network:
+        ipv4_address: 172.40.202.1
+
+  redisinsight:
+    image: redis/redisinsight:latest
+    container_name: redisinsight
+    ports:
+      - "5540:5540"
+    networks:
+      pegasus-cloud-network:
+        ipv4_address: 172.40.202.2
+
+networks:
+  pegasus-cloud-network:
+    external: true
+    name: pegasus-cloud-network

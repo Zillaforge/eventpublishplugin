@@ -7,6 +7,8 @@ services:
     networks: 
       pegasus-cloud-network:
           ipv4_address: 172.40.0.8
+    entrypoint: ["sh"]
+
 networks:
   pegasus-cloud-network:
     external: true

@@ -3,9 +3,9 @@ package services
 import (
 	cnt "eventpublishplugin/constants"
 
-	"pegasus-cloud.com/aes/pegasusmsgqueueclient/msgqueue"
-	"pegasus-cloud.com/aes/pegasusmsgqueueclient/msgqueue/rabbitmq"
-	"pegasus-cloud.com/aes/pegasusmsgqueueclient/msgqueue/rabbitmq/core"
+	"github.com/Zillaforge/pegasusmsgqueueclient/msgqueue"
+	"github.com/Zillaforge/pegasusmsgqueueclient/msgqueue/rabbitmq"
+	"github.com/Zillaforge/pegasusmsgqueueclient/msgqueue/rabbitmq/core"
 )
 
 type RabbitMQInput struct {

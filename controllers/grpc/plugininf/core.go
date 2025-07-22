@@ -1,7 +1,7 @@
 package plugininf
 
 import (
-	"pegasus-cloud.com/aes/eventpublishpluginclient/pb"
+	"github.com/Zillaforge/eventpublishpluginclient/pb"
 )
 
 // Method is implement all methods as pb.EventPublishPluginInterfaceCRUDControllerServer

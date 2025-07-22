@@ -9,7 +9,7 @@ import (
 
 	"github.com/go-redis/redis/v8"
 	"go.uber.org/zap"
-	"pegasus-cloud.com/aes/pegasusmsgqueueclient/msgqueue"
+	"github.com/Zillaforge/pegasusmsgqueueclient/msgqueue"
 )
 
 var _provider modCom.Provider

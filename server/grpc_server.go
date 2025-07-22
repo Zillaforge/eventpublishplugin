@@ -4,7 +4,7 @@ import (
 	ctlPluginInf "eventpublishplugin/controllers/grpc/plugininf"
 
 	"google.golang.org/grpc"
-	"pegasus-cloud.com/aes/eventpublishpluginclient/pb"
+	"github.com/Zillaforge/eventpublishpluginclient/pb"
 )
 
 func registerGRPCServer(srv *grpc.Server) {

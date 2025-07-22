@@ -11,11 +11,11 @@ import (
 
 	"go.uber.org/zap"
 	"google.golang.org/protobuf/types/known/emptypb"
-	cCnt "pegasus-cloud.com/aes/eventpublishpluginclient/constants"
-	"pegasus-cloud.com/aes/eventpublishpluginclient/pb"
-	tkErr "pegasus-cloud.com/aes/toolkits/errors"
-	"pegasus-cloud.com/aes/toolkits/tracer"
-	tkUtils "pegasus-cloud.com/aes/toolkits/utilities"
+	cCnt "github.com/Zillaforge/eventpublishpluginclient/constants"
+	"github.com/Zillaforge/eventpublishpluginclient/pb"
+	tkErr "github.com/Zillaforge/toolkits/errors"
+	"github.com/Zillaforge/toolkits/tracer"
+	tkUtils "github.com/Zillaforge/toolkits/utilities"
 )
 
 /*

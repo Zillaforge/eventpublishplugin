@@ -3,7 +3,7 @@ package rabbitmq
 import (
 	"eventpublishplugin/services"
 
-	"pegasus-cloud.com/aes/pegasusmsgqueueclient/msgqueue"
+	"github.com/Zillaforge/pegasusmsgqueueclient/msgqueue"
 )
 
 type Message struct {

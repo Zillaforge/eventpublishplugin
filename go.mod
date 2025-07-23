@@ -3,15 +3,15 @@ module eventpublishplugin
 go 1.22.4
 
 require (
+	github.com/Zillaforge/eventpublishpluginclient v0.2.3
+	github.com/Zillaforge/pegasusmsgqueueclient v1.5.0
+	github.com/Zillaforge/toolkits v0.4.5
 	github.com/go-redis/redis/v8 v8.11.5
 	github.com/spf13/cobra v1.8.1
 	go.uber.org/zap v1.27.0
 	google.golang.org/grpc v1.69.2
 	google.golang.org/protobuf v1.36.2
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
-	github.com/Zillaforge/eventpublishpluginclient v0.2.3
-	github.com/Zillaforge/pegasusmsgqueueclient v1.5.0
-	github.com/Zillaforge/toolkits v0.4.5
 )
 
 require (

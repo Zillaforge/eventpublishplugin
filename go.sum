@@ -1,3 +1,9 @@
+github.com/Zillaforge/eventpublishpluginclient v0.2.3 h1:j7NWlXE15mGCS/25Az2leF2B/FR45kPG4KpwqISDx1Q=
+github.com/Zillaforge/eventpublishpluginclient v0.2.3/go.mod h1:Bw+caf89wgpMOj91RXlxpFVJ3fufNTG2eQcfn3Hn9DA=
+github.com/Zillaforge/pegasusmsgqueueclient v1.5.0 h1:Z97iueuE0EpzrqkvFjBD1OzX3pI/qxith7RsGYbNAvA=
+github.com/Zillaforge/pegasusmsgqueueclient v1.5.0/go.mod h1:Hb+MEDZ0A/tWVUdDCt5xSKeS0ynn0nFlr5Z22SP0ACg=
+github.com/Zillaforge/toolkits v0.4.5 h1:/yaxwChoBln3g+3V24JU/ftyRU8Ihq9hl5Lzd0YYabs=
+github.com/Zillaforge/toolkits v0.4.5/go.mod h1:b4OnqVG3nU/5kLo5srsfC+yBw7Wolwt2FmUWwF6VOyg=
 github.com/ajankovic/xdiff v0.0.1 h1:V1cj8t5xwYzm6ZGPqPOlAc9AIajXuTEn41D/1MJBWMM=
 github.com/ajankovic/xdiff v0.0.1/go.mod h1:SUmEZ67uB97I0zkiuQ+lb+LOms9ipn8X+p+2RdJV710=
 github.com/bytedance/sonic v1.11.6 h1:oUp34TzMlL+OY1OUWxHqsdkgC/Zfc85zGqw9siXjrc0=
@@ -188,10 +194,4 @@ gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c/go.mod h1:K4uyk7z7BCEPqu6E+C
 gopkg.in/yaml.v3 v3.0.1 h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA=
 gopkg.in/yaml.v3 v3.0.1/go.mod h1:K4uyk7z7BCEPqu6E+C64Yfv1cQ7kz7rIZviUmN+EgEM=
 nullprogram.com/x/optparse v1.0.0/go.mod h1:KdyPE+Igbe0jQUrVfMqDMeJQIJZEuyV7pjYmp6pbG50=
-github.com/Zillaforge/eventpublishpluginclient v0.2.3 h1:svSqQGB8m0gP3OSI/Pg0Cs66kmMTm6susOJusGLFBEw=
-github.com/Zillaforge/eventpublishpluginclient v0.2.3/go.mod h1:GkGm7JZ9nsXZd7n+FfNhtGACzmQ5g7jOedLuvpGhtvc=
-github.com/Zillaforge/pegasusmsgqueueclient v1.5.0 h1:+MHYWIxUnScZFiqyPdA6TMJbI7QeRNsU4hWOy9ZXpQ0=
-github.com/Zillaforge/pegasusmsgqueueclient v1.5.0/go.mod h1:2gxybBCCnpZOjBBqntWFSlc8iwyDRAzTiljULfJc+oM=
-github.com/Zillaforge/toolkits v0.4.5 h1:xjwsD42vh1RZFsu/ZXU52IDqA6bSStoUDK+h2XeiVq4=
-github.com/Zillaforge/toolkits v0.4.5/go.mod h1:zYFHi1eU599GmpAJF9B5GzghesZslLtVMqxVtkJap1M=
 rsc.io/pdf v0.1.1/go.mod h1:n8OzWcQ6Sp37PL01nO98y4iUCRdTGarVfzxY20ICaU4=

@@ -1,4 +1,4 @@
-OWNER ?= ociscloud
+OWNER ?= Zillaforge
 PROJECT ?= EventPublishPlugin
 ABBR ?= eventpublishplugin
 IMAGE_NAME ?= event-publish-plugin
@@ -8,7 +8,6 @@ ARCH ?= $(shell uname -m | sed 's/x86_64/amd64/' | sed 's/aarch64/arm64/')
 PREVERSION ?= 0.1.2
 VERSION ?= $(shell cat VERSION)
 PWD := $(shell pwd)
-GO_PROXY ?= "https://proxy.golang.org,http://proxy.pegasus-cloud.com:8078"
 
 # Release Mode could be dev or prod,
 # dev: default, will add commit id to version
@@ -60,15 +59,15 @@ release:
 	@make set-version
 	@make start-dev-persistent
 	@rm -f eventpublishplugin
-	@docker run --rm --name build-env -e GOPROXY=$(GO_PROXY) -e GOSUMDB="off" --network=host -v $(PWD):/home/eventpublishplugin -w /home/eventpublishplugin $(OWNER)/golang:$(GOVERSION)-$(OS)-$(ARCH) make OS=$(OS) build
-	@docker run --rm --name build-env -e GOPROXY=$(GO_PROXY) -e GOSUMDB="off" --network=host -v $(PWD):/home/eventpublishplugin -v pegasus-cloud-eventpublishplugin:/tmp -w /home/eventpublishplugin $(OWNER)/golang:$(GOVERSION)-$(OS)-$(ARCH) cp -f etc/eventpublishplugin.yaml eventpublishplugin /tmp
+	@docker run --rm --name build-env -v $(PWD):/home/eventpublishplugin -w /home/eventpublishplugin $(OWNER)/golang:$(GOVERSION)-$(OS)-$(ARCH) make OS=$(OS) build
+	@docker run --rm --name build-env -v $(PWD):/home/eventpublishplugin -v pegasus-cloud-eventpublishplugin:/tmp -w /home/eventpublishplugin $(OWNER)/golang:$(GOVERSION)-$(OS)-$(ARCH) cp -f etc/eventpublishplugin.yaml eventpublishplugin /tmp
 
 .PHONY: release-image
 release-image: 
 	@make set-version
 	@mkdir -p build/busybox_image/tmp
 	@rm -rf tmp/container
-	@docker run --name build-env --rm -e GOPROXY=$(GO_PROXY) -e GOSUMDB="off" --network=host -v $(PWD):/home/eventpublishplugin -w /home/eventpublishplugin $(OWNER)/golang:$(GOVERSION)-$(OS)-$(ARCH) make build-container
+	@docker run --name build-env --rm -v $(PWD):/home/eventpublishplugin -w /home/eventpublishplugin $(OWNER)/golang:$(GOVERSION)-$(OS)-$(ARCH) make build-container
 	@docker rm -f build-env
 	@mkdir -p tmp/container
 	@docker rmi -f $(OWNER)/$(IMAGE_NAME):$(RELEASE_VERSION)
@@ -93,8 +92,6 @@ push-image:
 
 .PHONY: start
 start:
-	@go env -w GOPROXY=$(GO_PROXY)
-	@go env -w GOSUMDB="off"
 	@go run main.go serve -c etc/eventpublishplugin.yaml --redis-channel eventpublishplugin
 
 .PHONY: start-dev-env
